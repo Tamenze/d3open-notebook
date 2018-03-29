@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+
+	<div class="first">
+		Hello Moto.
+	</div>
+	<h1 class="myClass">
+		Early 2000s commercial slogans.
+	</h1>
+	<h2 id="myId">
+		Got Milk?
+	</h2>
+
+	<script>
+		// alert(d3.select('div').text());
+		// alert(d3.select('.myClass').text())
+		// alert(d3.select('#myId').text())
+		// d3.select('h1.myClass').append('span').text("BUY OUR PHONE!")
+		d3.select('.first').html("Or Late 90s <span> depending on who you ask. </span>")
+		d3.select('#myId').attr("style", "color: orange")
+	</script>
+</body>
+</html>
