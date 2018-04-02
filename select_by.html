@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Select + Data Joins</title>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
@@ -20,6 +20,11 @@
 		I saiddd, do you have milk?
 	</h4>
 
+	<ul id="list">
+		<li></li>
+		<li></li>
+	</ul>
+
 	<script>
 		// alert(d3.select('div').text());
 		// alert(d3.select('.myClass').text())
@@ -27,6 +32,25 @@
 		// d3.select('h1.myClass').append('span').text("BUY OUR PHONE!")
 		d3.select('.first').html("Or Late 90s <span> depending on who you ask. </span>");
 		d3.selectAll('#myId').attr("style", "color: orange");
+
+		d3.select("#list")
+			.selectAll("li").data([10,20,30,25,15]) //provides data to the selected elements
+			.text(function(d){ return "This is pre-existing element and the value is " + d})
+			//text() takes an anonymous function which takes the corresponding data and the index of the assigned data set as arguments,
+			//ie: function(d,i){
+			// 	console.log(d); // the data element
+			// 	console.log(i); // the index element
+			// 	console.log(this); // the current DOM object
+			// 	return d;
+			// }
+			.enter() //enter outputs the set of data items for which no graphic element existed before (in this case 30, 25, 15, as there are only 2 lis on page)
+			.append("li")
+			.text(function(d){return "This is dynamically created content and the value is " + d})
+
+		d3.selectAll("li")
+		   .data([10, 20, 30, 15]) 
+		   .exit() //outputs the set of data items for which the graphic element has been removed (in this case, 25, because our last array mapped to the DOM included 25 and this new array doesn't)
+		   .remove()
 	</script>
 </body>
 </html>

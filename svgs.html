@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SVGs</title>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+	<div id="svgcontainer">
+		<svg width="300" heigt="300">
+			<line x1="100" y1="100" x2="200" y2="200" style="stroke:rgb(255,0,0); stroke-width:2"/>
+		</svg>
+	</div>
+
+	<div id="container2"></div>
+	<div id="container3"></div>
+	<div id="container4"></div>
+	
+	<script>
+		//DYNAMICALLY CREATING SVG
+		var svg = d3.select('#container2').append("svg").attr("width", "300").attr("height","300")
+
+		svg.append("line")
+		.attr("x1", 100)
+		.attr("y1", 100)
+		.attr("x2", 200)
+		.attr("y2", 200)
+		.style("stroke", "rgb(0,0,255)")
+		.style("stroke-width", 2);
+
+		var svg2 = d3.select('#container3').append("svg").attr("width", "300").attr("height","300")
+		svg2.append("rect")
+			.attr("fill", "green")
+			.attr("x", 20)
+            .attr("y", 20)
+            .attr("width", 200)
+            .attr("height", 100)
+
+        var svg3 = d3.select('#container4').append("svg").attr("width", "300").attr("height","300")
+        svg3.append("circle")
+        	.attr("fill","purple")
+        	.attr("cx", 200)
+        	.attr("cy", 50)
+        	.attr("r", 20)
+	</script>
+</body>
+</html>
+
+
+<!-- svgs
+-vector-based image format
+-can be repped as a Document Object Model
+-can be included in the HTML document
+-properties can be specified as attributes "height", "width", etc
+-should have absolute positions relative to the origin(0,0) 
+-all tags must exist within an svg tag
+
+line tag
+<line x1="val" y1="val" x2="val" y2="val" style="stroke:rgb(x,y,z); stroke-width:val"/>  
+x,y are coordinates of each point (x1, y1, x2, y2)
+
+rectangle tag
+<rect x="val" y="val" width="val" height="val" fill="val"> </rect>
+x= x-coordinate of top-left corner of rect
+y= y-coordinate of top-left corner of rect
+
+
+circle tag
+<circle cx="val" cy="val" r="radius" fill="val"/circle>
+	cx= x-coordinate of circle center
+	cy= y-coordinate of circle center
+
+ellipse tag
+<ellipse cx = "val" cy = "val" rx = "val" ry = "val" fill = "val" />
+	rx = horizontal radius
+	yx = verical radius
+-->
