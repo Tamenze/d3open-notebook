@@ -16,14 +16,17 @@
 	<h2 id="myId">
 		Got Milk?
 	</h2>
+	<h4 id="myId">
+		I saiddd, do you have milk?
+	</h4>
 
 	<script>
 		// alert(d3.select('div').text());
 		// alert(d3.select('.myClass').text())
 		// alert(d3.select('#myId').text())
 		// d3.select('h1.myClass').append('span').text("BUY OUR PHONE!")
-		d3.select('.first').html("Or Late 90s <span> depending on who you ask. </span>")
-		d3.select('#myId').attr("style", "color: orange")
+		d3.select('.first').html("Or Late 90s <span> depending on who you ask. </span>");
+		d3.selectAll('#myId').attr("style", "color: orange");
 	</script>
 </body>
 </html>
